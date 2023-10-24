@@ -25,7 +25,7 @@ class Form
         foreach ($this->fields as $f) {
             echo $f->render();
         }
-        echo "<input type = 'submit' value ='enviar'>
+        echo "<br><input type = 'submit' value ='enviar'>
         </form>\n";
     }
 }
