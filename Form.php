@@ -1,5 +1,6 @@
 <?php
-class Form
+require_once 'Element.php'; 
+class Form extends Element
 {
     private $action;
     private $title;
@@ -16,7 +17,7 @@ class Form
     {
         $this->fields[] = $field;
     }
-    
+
     public function render()
     {
         echo "<form action= '$this->action'

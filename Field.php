@@ -1,6 +1,6 @@
 <?php
-
-abstract class Field
+require_once 'Render.php';
+abstract class Field implements Renderizable
 {
     protected $name;
     protected $type;

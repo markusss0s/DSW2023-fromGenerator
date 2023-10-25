@@ -3,6 +3,8 @@ require_once 'Form.php' ;
 require_once 'Field.php';
 require_once 'SimpleField.php';
 require_once 'MultipleField.php';
+require_once 'Document.php';
+require_once 'Paragraph.php';
 
 $form1 = new Form('testForm.php', 'Prueba formulario', 'post');
 $form1->add(new SimpleField('Nombre', 'text', 'Escribe el nombre: '));
@@ -20,9 +22,17 @@ $options = [
 //$form1->add($mf1);
 $form1->add(new MultipleField('Preferido','radio','¿Cuál es tu módulo preferido?', 'Despliegue de aplicaciones', $options));
 
+$document = new Document('Prueba');
+$document->add($form1);
+$document->add(new SimpleField('Nombre','text','Escribe el nombre'));
+$document->render();
+$paragraph = new Paragraph('HOLA MUNDO');
+$paragraph->render();
+
 ?>
 
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -44,4 +54,4 @@ $form1->add(new MultipleField('Preferido','radio','¿Cuál es tu módulo preferi
 
 </body>
 
-</html>
+</html> -->

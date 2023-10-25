@@ -18,9 +18,9 @@ class MultipleField extends Field
     {
         if ($this->type == 'select') $this->renderSelect();
         if ($this->type == 'radio') $this->renderRadio();
-
     }
-    private function renderSelect(){
+    private function renderSelect()
+    {
         echo "<p><label for = 'id_$this->name'>$this->text</label>";
         echo "<select id = 'id_$this->name' name = '$this->name' >";
         foreach ($this->option as $key => $value) {
@@ -29,13 +29,13 @@ class MultipleField extends Field
         }
         echo "</p>";
     }
-    private function renderRadio (){
+    private function renderRadio()
+    {
         echo "<h2>$this->text</h2>";
         foreach ($this->option as $key => $value) {
             $checked = ($key == $this->default) ? 'checked' : '';
             echo "<p><input id = 'id_$value' type = 'radio' name = '$this->name ' value = '$value' $checked>
             <label for = 'id_$value'>$key</label></p>";
         }
-        
     }
 }
