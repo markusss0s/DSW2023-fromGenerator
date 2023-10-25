@@ -11,8 +11,6 @@ class MultipleField extends Field
     public function addOption(string $key, string $value)
     {
         $this->option[$key] = $value;
-        
-
     }
 
 
@@ -23,12 +21,13 @@ class MultipleField extends Field
 
     }
     private function renderSelect(){
-        echo "<label for = 'id_$this->name'>$this->text</label>";
+        echo "<p><label for = 'id_$this->name'>$this->text</label>";
         echo "<select id = 'id_$this->name' name = '$this->name' >";
         foreach ($this->option as $key => $value) {
             $selected = ($key == $this->default) ? 'selected' : '';
             echo "<option value= '$value' $selected>$key</option>";
         }
+        echo "</p>";
     }
     private function renderRadio (){
         echo "<h2>$this->text</h2>";
